@@ -56,7 +56,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
 //                String s = getData();
 //                Toast.makeText(getApplicationContext(), s, Toast.LENGTH_SHORT).show();
-//
+
                 Intent intent = new Intent(MainActivity.this, ShowSqliteData.class);
                 startActivity(intent);
             }
@@ -64,6 +64,8 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+
+    //insert data into sqlite
     public long insertData(String name, String pass) {
         SQLiteDatabase database = helper.getWritableDatabase();
         ContentValues values = new ContentValues();
@@ -73,6 +75,8 @@ public class MainActivity extends AppCompatActivity {
         return id;
     }
 
+
+    //get data from sqlite
     public String getData() {
         SQLiteDatabase database = helper.getReadableDatabase();
         StringBuilder builder = new StringBuilder();
